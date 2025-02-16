@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web OS Simulator</title>
+    <link rel="stylesheet" href="styless.css">
+    <script defer src="scriptt.js"></script>
+</head>
+<body>
+    <div class="desktop">
+        <div class="taskbar">
+            <button class="start-button" onclick="toggleStartMenu()">App limit</button>
+        </div>
+        <div class="start-menu" id="startMenu">
+            <ul>
+                <li onclick="openWindow('Notepad')">Notepad</li>
+                <li onclick="openWindow('Browser')">Browser</li>
+                <li onclick="openWindow('Settings')">Settings</li>
+            </ul>
+        </div>
+        <div class="window" id="notepadWindow">
+            <div class="window-header">
+                <span>Notepad</span>
+                <button class="close-button" onclick="closeWindow('notepadWindow')">X</button>
+            </div>
+            <div class="window-content">
+                <textarea placeholder="Type here..."></textarea>
+            </div>
+        </div>
+        <div class="window" id="browserWindow">
+            <div class="window-header">
+                <span>Browser</span>
+                <button class="close-button" onclick="closeWindow('browserWindow')">X</button>
+            </div>
+            <div class="window-content">
+                <input type="text" placeholder="Enter URL..." />
+                <button onclick="loadPage()">Go</button>
+                <iframe id="browserFrame"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+/* styles.css */
